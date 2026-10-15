@@ -11,35 +11,20 @@ public class KickWeapon : MonoBehaviour
         gameObject.SetActive(true);
 
         // STEP 6 -------------------------------------------------------------
-        // In addition to accessing member variables from an object with '.',
-        //      we can also call methods.
-        // Uncomment the below line and pass _lifetimeSeconds as an ARGUMENT
-        //      to the method in order to start our timer with the number
-        //      of seconds that _lifetimeSeconds is set to.
-
-        //_lifeTimer.BeginTimer(_lifetimeSeconds);
-
+        // Start our timer with the number of seconds _lifetimeSeconds is set to.
+        _lifeTimer.BeginTimer(_lifetimeSeconds);
         // STEP 6 -------------------------------------------------------------
     }
 
     // STEP 7 -----------------------------------------------------------------
-    // Finally, we need to check EVERY FRAME for when the timer has run up.
-    //
-    // Uncomment the below method and replace the ???s with the method name.
-    // This is a built-in method from Unity that runs EVERY FRAME.
-    //
-    //private void ???()
-    //{
-        
-        // In the body of this method, we want to check if the timer has run out,
-        //      and disable the KickWeapon when it's done.
-        // Simply uncomment the lines once you've written the method.
-
-        //if (_lifeTimer.IsFinished())
-        //{
-        //     gameObject.SetActive(false);
-        //}
-
-    //}
+    // Update is a built-in Unity method that runs EVERY FRAME.
+    // Every frame, check if the timer has run out, and disable the kick when done.
+    private void Update()
+    {
+        if (_lifeTimer.IsFinished())
+        {
+            gameObject.SetActive(false);
+        }
+    }
     // STEP 7 -----------------------------------------------------------------
 }
